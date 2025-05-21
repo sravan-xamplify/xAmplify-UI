@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+      - dev
+      - staging
+      - feature/**  # optional: supports all feature branches
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
@@ -27,10 +31,11 @@ jobs:
           cp dist/xamplify-ui/browser/index.html dist/xamplify-ui/browser/404.html
           touch dist/xamplify-ui/browser/.nojekyll
 
-      - name: 🚀 Deploy to GitHub Pages
+      - name: 🚀 Deploy to GitHub Pages (main or preview)
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
+          # If it's main, deploy to gh-pages. Otherwise deploy to gh-pages-preview/<branch>
+          branch: ${{ github.ref_name == 'main' && 'gh-pages' || format('gh-pages-preview/{0}', github.ref_name) }}
           folder: dist/xamplify-ui/browser
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           clean: true
