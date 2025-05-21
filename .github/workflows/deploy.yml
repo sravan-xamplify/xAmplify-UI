@@ -6,7 +6,7 @@ on:
       - main
       - dev
       - staging
-      - feature/**  # optional: supports all feature branches
+      - feature/**     # optional
   workflow_dispatch:
 
 jobs:
@@ -27,15 +27,20 @@ jobs:
 
       - name: 🛠️ Build Angular App
         run: |
-          npm run build -- --configuration production --base-href="/xAmplify-UI/"
+          export BASE_PATH="/xAmplify-UI/"
+          if [[ "${{ github.ref_name }}" != "main" ]]; then
+            BASE_PATH="${BASE_PATH}${{ github.ref_name }}/"
+          fi
+          echo "Using base-href: $BASE_PATH"
+          npm run build -- --configuration production --base-href="$BASE_PATH"
           cp dist/xamplify-ui/browser/index.html dist/xamplify-ui/browser/404.html
           touch dist/xamplify-ui/browser/.nojekyll
 
-      - name: 🚀 Deploy to GitHub Pages (main or preview)
+      - name: 🚀 Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          # If it's main, deploy to gh-pages. Otherwise deploy to gh-pages-preview/<branch>
-          branch: ${{ github.ref_name == 'main' && 'gh-pages' || format('gh-pages-preview/{0}', github.ref_name) }}
+          branch: gh-pages
           folder: dist/xamplify-ui/browser
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          clean: true
+          clean: false
+          target-folder: ${{ github.ref_name == 'main' && '' || github.ref_name }}
