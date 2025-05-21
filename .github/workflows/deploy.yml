@@ -32,4 +32,5 @@ jobs:
         with:
           branch: gh-pages
           folder: dist/xamplify-ui/browser
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          clean: true
