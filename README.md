@@ -1,6 +1,23 @@
 # xAmplify
 
-Run `npm install --legacy-peer-deps` instead of `npm install`
+Run  Below commands
+
+`rm -rf node_modules package-lock.json`
+
+`npm cache verify`
+
+`npm install --dry-run`
+
+`npm outdated`
+
+`npm install -g @angular/cli@18.2.19`
+
+`npm install @angular/localize@18.2.13 --legacy-peer-deps`
+
+`npm install @angular/cdk@18.2.13 --legacy-peer-deps`
+
+`npm install`
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
