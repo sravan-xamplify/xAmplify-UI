@@ -10,7 +10,7 @@ Run  Below commands
 
 `npm outdated`
 
-`npm install -g @angular/cli@18.2.4`
+`npm install -g @angular/cli@18.2.19`
 
 `npm install`
 
