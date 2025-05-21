@@ -1,4 +1,7 @@
-# zynix
+# xAmplify
+
+Run `npm install --legacy-peer-deps` instead of `npm install`
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.4.
 
