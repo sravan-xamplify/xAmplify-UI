@@ -10,11 +10,7 @@ Run  Below commands
 
 `npm outdated`
 
-`npm install -g @angular/cli@18.2.19`
-
-`npm install @angular/localize@18.2.13 --legacy-peer-deps`
-
-`npm install @angular/cdk@18.2.13 --legacy-peer-deps`
+`npm install -g @angular/cli@18.2.4`
 
 `npm install`
 
