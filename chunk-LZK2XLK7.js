@@ -1,1 +1,0 @@
-import{a}from"./chunk-GIOPICOV.js";import"./chunk-ZSYUEUV6.js";import"./chunk-ZMBM2DU2.js";import"./chunk-KHEEIZ2W.js";import"./chunk-VEXMTMPT.js";import"./chunk-U73VZV47.js";import"./chunk-Z4ZFXNJ7.js";import"./chunk-5IRIGFBY.js";import"./chunk-7IEGBUCH.js";import"./chunk-7QP7SMW2.js";import"./chunk-2EBTC7QX.js";import"./chunk-66YHNWRR.js";export{a as MailsettingsComponent};
