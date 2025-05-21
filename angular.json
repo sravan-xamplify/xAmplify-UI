@@ -53,7 +53,7 @@
               "can-use-dom",
               "dropzone"
             ],
-            "outputPath": "preview",
+            "outputPath": "dist/xamplify-ui",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js", "@angular/localize/init"],
