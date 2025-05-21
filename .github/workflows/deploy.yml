@@ -28,10 +28,12 @@ jobs:
       - name: 🛠️ Build Angular App
         run: |
           export BASE_PATH="/xAmplify-UI/"
-          if [[ "${{ github.ref_name }}" != "main" ]]; then
-            BASE_PATH="${BASE_PATH}${{ github.ref_name }}/"
+          if [ "$BRANCH" = "main" ]; then
+            BASE_HREF="/xAmplify-UI/"
+          else
+             BASE_HREF="/xAmplify-UI/$BRANCH/"
           fi
-          echo "Using base-href: $BASE_PATH"
+          echo "Building base-href: $BASE_PATH"
           npm run build -- --configuration production --base-href="$BASE_PATH"
           cp dist/xamplify-ui/browser/index.html dist/xamplify-ui/browser/404.html
           touch dist/xamplify-ui/browser/.nojekyll
