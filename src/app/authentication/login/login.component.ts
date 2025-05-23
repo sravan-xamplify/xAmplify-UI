@@ -135,12 +135,12 @@ Submit() {
     this.loginForm.controls['password'].value === 'sprukoadmin'
   ) {
     this.router.navigate(['/sales']);
-    this.toastr.success('login successful','Zynix', {
+    this.toastr.success('login successful','xAmplify', {
       timeOut: 3000,
       positionClass: 'toast-top-right',
     });
   } else {
-    this.toastr.error('Invalid details','Zynix', {
+    this.toastr.error('Invalid details','xAmplify', {
       timeOut: 3000,
       positionClass: 'toast-top-right',
     });
